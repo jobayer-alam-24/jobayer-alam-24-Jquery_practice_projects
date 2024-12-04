@@ -35,6 +35,7 @@ body {
     font-size: 14px;
     width: 100%;
 }
+#isAvailable {margin-top: 5px; display: inline-block; font-weight: bold;}
 textarea 
 {
     resize: none;

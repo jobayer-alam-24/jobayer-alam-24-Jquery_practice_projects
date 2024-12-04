@@ -4,6 +4,16 @@ $(function () {
     let buttonShowHide = $(".show-btn");
     let getInfo = $(".get-info");
     let textArea = $("[name='comments']");
+    let username = $("[name='username']");
+    let availability = $('#isAvailable');
+    
+
+
+
+    console.log($("#parent").children("#child").text());
+    console.log($("#parent").append($("#parent").html("<b>Hello<b>")));
+
+
     buttonShowHide.on('click', function()
     {
         let passwordField = $("[name='password']");
@@ -35,4 +45,21 @@ $(function () {
             }
         });
     })
+    username.blur(function()
+    {
+        $.ajax({
+            url: "server/data.html",
+            method: "GET",
+            data: {},
+            dataType: "html",
+            success: function(data)
+            {
+                //covert html to DOM object using - $()
+                let $htmlToDom = $(data);
+                console.log($htmlToDom.children("#username").html());
+                // console.log(data);
+                $("#parent").append($htmlToDom.children("#username"));
+            }
+        })
+    });
 })
