@@ -6,14 +6,6 @@ $(function () {
     let textArea = $("[name='comments']");
     let username = $("[name='username']");
     let availability = $('#isAvailable');
-    
-
-
-
-    console.log($("#parent").children("#child").text());
-    console.log($("#parent").append($("#parent").html("<b>Hello<b>")));
-
-
     buttonShowHide.on('click', function()
     {
         let passwordField = $("[name='password']");
@@ -45,21 +37,33 @@ $(function () {
             }
         });
     })
-    username.blur(function()
+    username.keyup(function()
     {
-        $.ajax({
-            url: "server/data.html",
-            method: "GET",
-            data: {},
-            dataType: "html",
-            success: function(data)
-            {
-                //covert html to DOM object using - $()
-                let $htmlToDom = $(data);
-                console.log($htmlToDom.children("#username").html());
-                // console.log(data);
-                $("#parent").append($htmlToDom.children("#username"));
-            }
-        })
+        let text = $(this).val();
+        if(text != "")
+        {
+            $.ajax({
+                url: "server/data.json",
+                method: "GET",
+                data: {},
+                dataType: "json",
+                success: function(data)
+                {
+                    let name = data["username"];
+                    if(text == name)
+                    {
+                        availability.text("Valid User").css("color", "green");
+                    }
+                    else
+                    {
+                        availability.text("Invalid User!").css("color", "red");
+                    }
+                }
+            })
+        }
+        else
+        {
+            availability.text("");
+        }
     });
 })
