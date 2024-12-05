@@ -126,4 +126,8 @@ $(function () {
         let tr = $(`#${id}`).parents("tr");
         tr.remove();
     })
+    $(document).on('mouseenter', "li", function()
+    {
+        $(this).toggleClass('bg');
+    })
 })
