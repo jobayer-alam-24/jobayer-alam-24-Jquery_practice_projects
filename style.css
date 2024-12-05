@@ -6,11 +6,16 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    margin: 200px 50px;
+    margin-bottom: 1000px;
     height: 100vh;
     background-color: #f0f0f0;
 }
-
+.del-icon
+{
+    color: white;
+    background-color: red;
+}
 .login-container {
     width: 100%;
     max-width: 400px;
@@ -97,4 +102,43 @@ textarea
 }
 .submit-btn:hover {
     background-color: #0056b3;
+}
+.table2 {
+    width: 50%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+.table2 td input
+{
+    width: 100%;
+}
+
+.table2 th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+.icon-td{
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+i{
+    font-size: 20px;
+    background-color: green;
+    padding: 5px;
+    color: white;
+    border-radius: 50%;
+}
+
+.input-with-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-with-icon input {
+    padding: 8px;
+    font-size: 14px;
+    margin-right: 5px;
 }

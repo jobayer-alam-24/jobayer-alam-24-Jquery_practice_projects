@@ -6,7 +6,9 @@ $(function () {
     let availabilityText = $("#isAvailable");
     let load_more = $(".load-more");
     let table = $(".table tbody");
-
+    let addInput = $(".icon-td");
+    let inputTableBody = $(".table2 tbody");
+    let delCount = 1;
     //Random JSON DATA Add Into Table
     table.data("name1", "Rahima");
     table.data("name2", "Jalil");
@@ -108,4 +110,16 @@ $(function () {
             }
         }
     });
+    addInput.on('click', function()
+    {
+        let trData = inputTableBody.children("tr").children(".input-with-icon").html();
+        let tr = `<tr>
+        <td class="input-with-icon">${trData}</td>
+        <td class="icon-td">
+        <i id="del${delCount++}" class="fa-solid fa-delete-left del-icon"></i>
+        </td>
+        </tr>`;
+        inputTableBody.append(tr);
+       
+    })
 })
