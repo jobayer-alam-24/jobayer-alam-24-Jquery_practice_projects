@@ -120,6 +120,10 @@ $(function () {
         </td>
         </tr>`;
         inputTableBody.append(tr);
-       
+    })
+    $(document).on('click', ".del-icon", function () {
+        let id = $(this).attr("id");
+        let tr = $(`#${id}`).parents("tr");
+        tr.remove();
     })
 })
