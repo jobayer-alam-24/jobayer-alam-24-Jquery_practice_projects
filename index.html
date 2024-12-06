@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="library/jquery-ui.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -100,10 +101,12 @@
         </div>
         <form action="#" method="post">
             <h3>Auto Get Comments:</h3>
-            <textarea name="comments" id="comments-input" rows="20" cols="80" placeholder="Write Something About Ourselves.."></textarea><br>
+            <textarea name="comments" id="comments-input" rows="20" cols="80"
+                placeholder="Write Something About Ourselves.."></textarea><br>
             <span class="success-messege"></span>
         </form>
-            <input class="search-input" type="text" placeholder="Search by name...Rahim, Karim, Jobbar, Kabir, Jasim" id="searchBar">
+        <input class="search-input" type="text" placeholder="Search by name...Rahim, Karim, Jobbar, Kabir, Jasim"
+            id="searchBar">
         <table class="search-table">
             <thead>
                 <tr>
@@ -146,7 +149,23 @@
                 </tr>
             </tbody>
         </table>
+        <div class="login-container2">
+            <form class="login-form" action="" method="POST">
+                <h2>Login</h2>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username1" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password1" name="password" placeholder="Enter your password" required>
+                </div>
+                <p class="error-text"></p>
+                <button type="submit" class="login-button">Login</button>
+            </form>
+        </div>
         <script src="library/jquery-3.7.1.js"></script>
+        <script src="library/jquery-ui.min.js"></script>
         <script src="script.js"></script>
 </body>
 

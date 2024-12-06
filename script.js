@@ -8,6 +8,10 @@ $(function () {
     let table = $(".table tbody");
     let addInput = $(".icon-td");
     let inputTableBody = $(".table2 tbody");
+    let login_btn = $(".login-button");
+    let username1 = $("#username1");
+    let login_container2 = $(".login-container2"); 
+    let password1 = $("#password1");
     let delCount = 1;
     let searchBar = $("#searchBar");
     //Random JSON DATA Add Into Table
@@ -59,7 +63,7 @@ $(function () {
                 data: {},
                 dataType: "JSON",
                 success: function (data) {
-                    let realName = data["username"];
+                    let realName = data["username1"];
                     if (inputValue != "") {
                         if (realName == inputValue) {
                             availabilityText.text("Found").css("color", "green").fadeIn("slow");
@@ -180,6 +184,48 @@ $(function () {
             }
         })
     }
+    console.log(login_container2);
     get_data();
+    login_btn.on('click', function (e) {
+        e.preventDefault();
+        let username = username1.val();
+        let password = password1.val();
+        let errorTextField = $(".error-text");
+
+        if (username != '' && password != '') {
+            $.ajax({
+                url: "server/data.json",
+                method: "GET",
+                data: {},
+                dataType: "JSON",
+                cache: false,
+                beforeSend: function () {
+                    login_btn.text("Connecting...");
+                },
+                success: function (data, statusTxt) {
+                    if (statusTxt == 'success') {
+                        if (data["username"] == username && data["password"] == password) {
+                            setTimeout(function () {
+                                login_btn.text("Login");
+                                alert("Login Success!");
+                                errorTextField.text("");
+                            }, 3000);
+                        }
+                        else
+                        {
+                            login_btn.text("Login");
+                            errorTextField.text("Invalid Username or Password!");
+                            var options = {
+                                distance: "40",
+                                direction: "left",
+                                times: "3"
+                            }
+                            login_container2.effect("shake", options, "slow");
+                        }
+                    }
+                }
+            });
+        }
+    })
 })
 
