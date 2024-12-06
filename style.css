@@ -10,14 +10,16 @@ body {
     margin-bottom: 1000px;
     background-color: #f0f0f0;
 }
-.select-box1{
+
+.select-box1 {
     margin-bottom: 10px;
 }
-.del-icon
-{
+
+.del-icon {
     color: white;
     background-color: red;
 }
+
 .login-container {
     width: 100%;
     max-width: 400px;
@@ -44,20 +46,25 @@ body {
     font-size: 14px;
     width: 100%;
 }
+
 table {
     margin-top: 5%;
     width: 100%;
     border-collapse: collapse;
     background-color: white;
 }
-th, td {
+
+th,
+td {
     border: 1px solid #ccc;
     padding: 8px;
     text-align: left;
 }
+
 th {
     background-color: #f4f4f4;
 }
+
 .load-more {
     margin: 10px 0;
     padding: 10px 20px;
@@ -67,15 +74,22 @@ th {
     cursor: pointer;
     border-radius: 5px;
 }
+
 .load-more:hover {
     background-color: #0056b3;
 }
-#isAvailable {margin-top: 5px; display: inline-block; font-weight: bold;}
-textarea 
-{
+
+#isAvailable {
+    margin-top: 5px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+textarea {
     resize: none;
     height: 80px;
 }
+
 .form-group input {
     width: 100%;
     padding: 10px;
@@ -96,37 +110,42 @@ textarea
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-.show-btn, .get-info
-{
+
+.show-btn,
+.get-info {
     margin-top: 10px;
     padding: 1% 3%;
     cursor: pointer;
 }
+
 .submit-btn:hover {
     background-color: #0056b3;
 }
+
 .table2 {
     width: 50%;
     margin: 20px auto;
     border-collapse: collapse;
 }
-.table2 td input
-{
+
+.table2 td input {
     width: 100%;
 }
 
-.table2 th, td {
+.table2 th,
+td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
 }
-.icon-td{
-    padding: 0;
-    margin: 0;
+
+.icon-td {
+    text-align: center;
     cursor: pointer;
 }
-i{
-    font-size: 20px;
+
+i {
+    font-size: 25px;
     background-color: green;
     padding: 5px;
     color: white;
@@ -144,12 +163,56 @@ i{
     font-size: 14px;
     margin-right: 5px;
 }
+
 ul {
     list-style-type: square;
     padding: 10px;
 }
+
 li {
     font-size: 18px;
     margin: 10px 0;
 }
-.bg{background-color: rgb(16, 99, 167); color: white;}
+
+.bg {
+    background-color: rgb(16, 99, 167);
+    color: white;
+}
+
+.search-container {
+    margin-bottom: 10px;
+}
+
+.search-input {
+    margin-top: 5%;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}

@@ -9,6 +9,7 @@ $(function () {
     let addInput = $(".icon-td");
     let inputTableBody = $(".table2 tbody");
     let delCount = 1;
+    let searchBar = $("#searchBar");
     //Random JSON DATA Add Into Table
     table.data("name1", "Rahima");
     table.data("name2", "Jalil");
@@ -144,5 +145,17 @@ $(function () {
             }
         });
     });
+    $(".search-table").hide();
+    searchBar.on('keyup', function () {
+        $(".search-table").slideDown("slow");
+        let searchTableRow = $(".search-table tr");
+        let inputValue = $(this).val().toLowerCase();
+
+        searchTableRow.filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(inputValue) > -1);
+        })
+        if($(this).val() == '')
+            $(".search-table").hide();
+    })
 })
 
