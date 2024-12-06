@@ -14,7 +14,13 @@ body {
 .select-box1 {
     margin-bottom: 10px;
 }
-
+.select-box2{
+    margin-bottom: 5%;
+}
+.success-messege{
+    color: green;
+    font-weight: bold;
+}
 .del-icon {
     color: white;
     background-color: red;
@@ -143,7 +149,13 @@ td {
     text-align: center;
     cursor: pointer;
 }
-
+textarea{
+    resize: none;
+    font-size: 1;
+    margin-top: 1%;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 i {
     font-size: 25px;
     background-color: green;

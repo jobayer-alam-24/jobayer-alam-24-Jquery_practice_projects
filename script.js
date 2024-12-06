@@ -111,8 +111,7 @@ $(function () {
             }
         }
     });
-    addInput.on('click', function()
-    {
+    addInput.on('click', function () {
         let trData = inputTableBody.children("tr").children(".input-with-icon").html();
         let tr = `<tr>
         <td class="input-with-icon">${trData}</td>
@@ -127,8 +126,7 @@ $(function () {
         let tr = $(`#${id}`).parents("tr");
         tr.remove();
     })
-    $(document).on('mouseenter', "li", function()
-    {
+    $(document).on('mouseenter', "li", function () {
         $(this).toggleClass('bg');
     })
 
@@ -137,10 +135,9 @@ $(function () {
         let selectedValue = $(this).val();
 
         let selectBox2Options = $('.select-box2 select').children();
-        selectBox2Options.filter(function(){
+        selectBox2Options.filter(function () {
             let box2Value = $(this).val();
-            if(selectedValue == box2Value)
-            {
+            if (selectedValue == box2Value) {
                 $(this).attr('selected', 'true');
             }
         });
@@ -154,8 +151,35 @@ $(function () {
         searchTableRow.filter(function () {
             $(this).toggle($(this).text().toLowerCase().indexOf(inputValue) > -1);
         })
-        if($(this).val() == '')
+        if ($(this).val() == '')
             $(".search-table").hide();
     })
+    function get_data() {
+        let textInput = $("#comments-input");
+        let successMessege = $(".success-messege");
+        textInput.on('change', function () {
+            let inputValue = $(this).val();
+            if (inputValue != "") {
+                $.ajax({
+                    url: "server/data.txt",
+                    method: "GET",
+                    data: { comment: inputValue },
+                    dataType: "text",
+                    success: function (data, statusTxt) {
+                        if (statusTxt == "success") {
+                            textInput.val(data);
+                            setTimeout(function () {
+                                successMessege.text("Comments Fetched!");
+                                setTimeout(function () {
+                                    successMessege.text('');
+                                }, 5000)
+                            }, 2000);
+                        }
+                    }
+                });
+            }
+        })
+    }
+    get_data();
 })
 
