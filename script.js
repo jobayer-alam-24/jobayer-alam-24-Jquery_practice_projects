@@ -206,9 +206,9 @@ $(function () {
                     if (statusTxt == 'success') {
                         if (data["username"] == username && data["password"] == password) {
                             setTimeout(function () {
+                                errorTextField.text("");
                                 login_btn.text("Login");
                                 alert("Login Success!");
-                                errorTextField.text("");
                             }, 3000);
                         }
                         else
@@ -218,8 +218,8 @@ $(function () {
                             var options = {
                                 distance: "40",
                                 direction: "left",
-                                times: "3"
-                            }
+                                times: "4"
+                            };
                             login_container2.effect("shake", options, "slow");
                         }
                     }
