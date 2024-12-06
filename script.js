@@ -130,5 +130,19 @@ $(function () {
     {
         $(this).toggleClass('bg');
     })
+
+    //Dependent Select Box
+    $(".select-box1").on('change', 'select', function () {
+        let selectedValue = $(this).val();
+
+        let selectBox2Options = $('.select-box2 select').children();
+        selectBox2Options.filter(function(){
+            let box2Value = $(this).val();
+            if(selectedValue == box2Value)
+            {
+                $(this).attr('selected', 'true');
+            }
+        });
+    });
 })
 

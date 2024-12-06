@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JQUERY Projects (Practice)</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -65,17 +67,37 @@
             </tbody>
             <button class="load-more">Load More</button>
         </table>
-       <div class="lists">
-        <h3>Languages To Learn</h3>
-        <hr>
-        <ul type="square">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Javascript</li>
-            <li>Jquery</li>
-            <li>AJAX</li>
-        </ul>
-       </div>
+        <div class="lists">
+            <h3>Languages To Learn</h3>
+            <hr>
+            <ul type="square">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+                <li>Jquery</li>
+                <li>AJAX</li>
+            </ul>
+        </div>
+        <div class="select-box1">
+            <h3>Dependent Select Box</h3>
+            <hr>
+            <label for="country">Select Your Country:</label>
+            <select name="country" id="country">
+                <option value="Select Country">Select Country</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="India">India</option>
+                <option value="Pakistan">Pakistan</option>
+            </select>
+        </div>
+        <div class="select-box2">
+            <label for="country2">Dependent Country:</label>
+            <select name="country2" id="country2">
+                <option value="Select Country">Select Country</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="India">India</option>
+                <option value="Pakistan">Pakistan</option>
+            </select>
+        </div>
         <script src="library/jquery-3.7.1.js"></script>
         <script src="script.js"></script>
 </body>
