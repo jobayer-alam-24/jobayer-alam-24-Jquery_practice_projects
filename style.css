@@ -50,7 +50,8 @@ body {
     margin-bottom: 5px;
     font-weight: bold;
     font-size: 14px;
-    width: 100%;
+    width: 95%;
+    margin: auto;
 }
 
 table {
