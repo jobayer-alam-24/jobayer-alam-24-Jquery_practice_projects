@@ -184,7 +184,6 @@ $(function () {
             }
         })
     }
-    console.log(login_container2);
     get_data();
     login_btn.on('click', function (e) {
         e.preventDefault();
@@ -228,4 +227,4 @@ $(function () {
         }
     })
 })
-
+                    
