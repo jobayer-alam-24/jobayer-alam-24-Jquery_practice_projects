@@ -10,10 +10,11 @@ $(function () {
     let inputTableBody = $(".table2 tbody");
     let login_btn = $(".login-button");
     let username1 = $("#username1");
-    let login_container2 = $(".login-container2"); 
+    let login_container2 = $(".login-container2");
     let password1 = $("#password1");
     let delCount = 1;
     let searchBar = $("#searchBar");
+    let delBtn = $(".full-width-btn");
     //Random JSON DATA Add Into Table
     table.data("name1", "Rahima");
     table.data("name2", "Jalil");
@@ -211,8 +212,7 @@ $(function () {
                                 window.location.href = "server/dashboard.html";
                             }, 3000);
                         }
-                        else
-                        {
+                        else {
                             login_btn.text("Login");
                             errorTextField.text("Invalid Username or Password!");
                             var options = {
@@ -227,5 +227,16 @@ $(function () {
             });
         }
     })
+    delBtn.on('click', function () {
+        if (confirm("Are You Sure to Delete? ")) {
+            let tableContainerCheckedBox = $(".table-container :checkbox:checked");
+            tableContainerCheckedBox.each(function (i, element) {
+                element.closest("tr").remove();
+            })
+        }
+        else {
+            return false;
+        }
+    })
 })
-                    
+
