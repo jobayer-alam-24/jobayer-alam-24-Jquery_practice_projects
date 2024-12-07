@@ -14,13 +14,16 @@ body {
 .select-box1 {
     margin-bottom: 10px;
 }
-.select-box2{
+
+.select-box2 {
     margin-bottom: 5%;
 }
-.success-messege{
+
+.success-messege {
     color: green;
     font-weight: bold;
 }
+
 .del-icon {
     color: white;
     background-color: red;
@@ -150,13 +153,15 @@ td {
     text-align: center;
     cursor: pointer;
 }
-textarea{
+
+textarea {
     resize: none;
     font-size: 1;
     margin-top: 1%;
     padding: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 i {
     font-size: 25px;
     background-color: green;
@@ -229,6 +234,7 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #f1f1f1;
 }
+
 .login-container2 {
     margin-top: 4%;
     background-color: #ffffff;
@@ -237,10 +243,12 @@ tr:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     width: 300px;
 }
-.error-text{
+
+.error-text {
     color: rgb(221, 30, 30);
     font-weight: bolder;
 }
+
 .login-form h2 {
     margin-bottom: 20px;
     font-size: 24px;
@@ -283,3 +291,56 @@ tr:hover {
 .login-button:hover {
     background-color: #0056b3;
 }
+
+.table-container {
+    margin: 20px auto;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container thead th {
+    background-color: #1464a5;
+    color: white;
+}
+
+.table-container th,
+td {
+    text-align: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-container tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table-container input [type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.full-width-btn {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+.full-width-btn:hover {
+    background-color: #e63939;
+  }

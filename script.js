@@ -208,6 +208,7 @@ $(function () {
                                 errorTextField.text("");
                                 login_btn.text("Login");
                                 alert("Login Success!");
+                                window.location.href = "server/dashboard.html";
                             }, 3000);
                         }
                         else
