@@ -228,8 +228,13 @@ $(function () {
         }
     })
     delBtn.on('click', function () {
+        let tableContainerCheckedBox = $(".table-container :checkbox:checked");
+        let checkboxLength = tableContainerCheckedBox.length;
+        if(checkboxLength <= 0){
+            alert("Please, Select at least one!");
+            return false;
+        }
         if (confirm("Are You Sure to Delete? ")) {
-            let tableContainerCheckedBox = $(".table-container :checkbox:checked");
             tableContainerCheckedBox.each(function (i, element) {
                 element.closest("tr").remove();
             })
