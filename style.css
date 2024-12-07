@@ -366,6 +366,7 @@ td {
     font-size: 1rem;
     color: #555;
     margin-bottom: 15px;
+    text-align: justify;
 }
 
 .see-more {
@@ -377,4 +378,50 @@ td {
 
 .see-more:hover {
     text-decoration: underline;
+}
+
+.outer-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    background-color: rgba(167, 156, 156, 0.596);
+    margin: 3% 0;
+    border-radius: 8px;
+    transition: all ease-out 5s;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: #5fa7c4;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    margin-bottom: 3%;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.download-btn:hover {
+    background-color: #00bfff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.inner-box {
+    width: 0;
+    height: 30px;
+    background-color: rgb(76, 146, 173);
+    margin: 3% 0;
+    border-radius: 8px;
 }

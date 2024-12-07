@@ -12,6 +12,8 @@ $(function () {
     let username1 = $("#username1");
     let login_container2 = $(".login-container2");
     let password1 = $("#password1");
+    let download_btn = $(".download-btn");
+    let inner_box = $(".inner-box");
     let delCount = 1;
     let searchBar = $("#searchBar");
     let delBtn = $(".full-width-btn");
@@ -252,17 +254,32 @@ $(function () {
             data: {},
             dataType: "text",
             beforeSend: function () {
-                $(this).text("loading....");
+                see_more.text("loading....");
             },
             success: function (data, statusTxt) {
                 if(statusTxt == "success")
                 {
                     setTimeout(function(){
+                        see_more.text("See more...");
                         boxText.append(data);
                     }, 3000);
                 }
             }
         });
     })
+
+    var size = 0;
+    download_btn.on("click", function () {
+        let runningInterval = setInterval(function () {
+            size += 8;
+            inner_box.width(size + "%");
+
+            if(size >= 100){
+                clearInterval(runningInterval);
+                download_btn.text("Download Completed!");
+                download_btn.css("background-color", "green");
+            }
+        }, 2000);
+   });
 })
 
