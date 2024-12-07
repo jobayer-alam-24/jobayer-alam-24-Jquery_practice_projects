@@ -15,6 +15,7 @@ $(function () {
     let delCount = 1;
     let searchBar = $("#searchBar");
     let delBtn = $(".full-width-btn");
+    let see_more = $(".see-more");
     //Random JSON DATA Add Into Table
     table.data("name1", "Rahima");
     table.data("name2", "Jalil");
@@ -230,7 +231,7 @@ $(function () {
     delBtn.on('click', function () {
         let tableContainerCheckedBox = $(".table-container :checkbox:checked");
         let checkboxLength = tableContainerCheckedBox.length;
-        if(checkboxLength <= 0){
+        if (checkboxLength <= 0) {
             alert("Please, Select at least one!");
             return false;
         }
@@ -242,6 +243,26 @@ $(function () {
         else {
             return false;
         }
+    })
+    see_more.on('click', function () {
+        let boxText = $(this).siblings(".box-text");
+        $.ajax({
+            url: "server/data.txt",
+            method: "GET",
+            data: {},
+            dataType: "text",
+            beforeSend: function () {
+                $(this).text("loading....");
+            },
+            success: function (data, statusTxt) {
+                if(statusTxt == "success")
+                {
+                    setTimeout(function(){
+                        boxText.append(data);
+                    }, 3000);
+                }
+            }
+        });
     })
 })
 
