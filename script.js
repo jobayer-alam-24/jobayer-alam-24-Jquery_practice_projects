@@ -324,8 +324,7 @@ $(function () {
         }
     })
     range.on('change', function () {
-        let tkValue = $(this).val();
-        tkShow.text(tkValue);
+        tkShow.text($(this).val());
     })
 })
 

@@ -469,6 +469,7 @@ td {
     background-color: teal;
     color: white;
     padding: 20px 15px;
+    text-align: center;
 }
 .price-range ~ p{
     text-align: center;
