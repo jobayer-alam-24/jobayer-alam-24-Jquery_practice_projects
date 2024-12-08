@@ -21,6 +21,9 @@ $(function () {
     let switchContainer = $(".switch");
     let switchInner = $(".switch-inner");
     let checkbox = $("#switch");
+    let boxContainer = $(".box-container");
+    let range = $('[type="range"]');
+    let tkShow = $(".price-range").next().children("span");
     //Random JSON DATA Add Into Table
     table.data("name1", "Rahima");
     table.data("name2", "Jalil");
@@ -312,6 +315,17 @@ $(function () {
             checkbox.attr("checked", false);
         }
         
+    })
+    $('.select-box3').on('change', 'select', function(){
+        let value = $(this).val();
+        let modelShow = `<h5 class="model">Model: <span>${value}</span></h5>`;
+        if(value != ""){
+            boxContainer.append(modelShow);
+        }
+    })
+    range.on('change', function () {
+        let tkValue = $(this).val();
+        tkShow.text(tkValue);
     })
 })
 

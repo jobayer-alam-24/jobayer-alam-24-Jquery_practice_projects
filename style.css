@@ -462,4 +462,17 @@ td {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 4%;
+}
+.price-range
+{
+    background-color: teal;
+    color: white;
+    padding: 20px 15px;
+}
+.price-range ~ p{
+    text-align: center;
+}
+.price-range ~ p input{
+    cursor: pointer;   
 }
