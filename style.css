@@ -425,3 +425,28 @@ td {
     margin: 3% 0;
     border-radius: 8px;
 }
+.switch{
+    width: 200px;
+    height: 60px;
+    background-color: white;
+    margin-bottom: 3%;
+    border-radius: 100px;
+    position: relative;
+    border: 10px solid rgba(139, 137, 137, 0.507);
+    transition: all 1s ease-in;
+}
+.switch-inner{
+    width: 30%;
+    position: absolute;
+    /* left: 70%; */
+    left: 0;
+    height: 60px;
+    background-color: rgb(223, 217, 217);
+    border-radius: 50%;
+    box-shadow: inset 10px 0 40px rgba(51, 50, 50, 0.5);
+    transition: all 1s ease-in;
+}
+
+.check-box{
+    margin-bottom: 3%;
+}

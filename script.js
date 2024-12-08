@@ -18,6 +18,9 @@ $(function () {
     let searchBar = $("#searchBar");
     let delBtn = $(".full-width-btn");
     let see_more = $(".see-more");
+    let switchContainer = $(".switch");
+    let switchInner = $(".switch-inner");
+    let checkbox = $("#switch");
     //Random JSON DATA Add Into Table
     table.data("name1", "Rahima");
     table.data("name2", "Jalil");
@@ -281,5 +284,27 @@ $(function () {
             }
         }, 2000);
    });
+   switchContainer.on("click", function () { 
+        let innerBox = switchInner.css("left");
+        if(innerBox == "0px"){
+            switchInner.css({
+                "left": "70%",
+                "background-color": "white",
+                "box-shadow": "none"
+            });
+            $(this).css({
+               "background-color": "skyblue"
+            });
+            checkbox.attr("checked", true);
+        }
+        else
+        {
+            switchInner.css("left", "0")
+            switchInner.css("background-color", "rgb(223, 217, 217)");
+            $(this).css("background-color", "white");
+            checkbox.attr("checked", false);
+        }
+        
+    })
 })
 
