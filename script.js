@@ -24,6 +24,7 @@ $(function () {
     let boxContainer = $(".box-container");
     let range = $('[type="range"]');
     let tkShow = $(".price-range").next().children("span");
+    let cardPrices = $(".card-container").children().children(".card-price");
     //Random JSON DATA Add Into Table
     table.data("name1", "Rahima");
     table.data("name2", "Jalil");
@@ -323,8 +324,23 @@ $(function () {
             boxContainer.append(modelShow);
         }
     })
+    $(".card-container").children().hide();
     range.on('change', function () {
-        tkShow.text($(this).val());
+        let rangeValue = $(this).val();
+        tkShow.text(rangeValue);
+        
+        cardPrices.each(function (i, element) {
+            let priceValue = parseInt($(element).text());
+            let card = $(element).parents('.card');
+
+            if(priceValue >= 500 && priceValue <= rangeValue){
+                card.show("slow");
+            }
+            else
+            {
+                card.fadeOut("slow").hide();
+            }
+        })
     })
 })
 
