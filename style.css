@@ -10,7 +10,11 @@ body {
     margin-bottom: 1000px;
     background-color: #f0f0f0;
 }
-.mt{margin-top: 30px;}
+
+.mt {
+    margin-top: 30px;
+}
+
 .select-box1 {
     margin-bottom: 10px;
 }
@@ -425,7 +429,8 @@ td {
     margin: 3% 0;
     border-radius: 8px;
 }
-.switch{
+
+.switch {
     width: 200px;
     height: 60px;
     background-color: white;
@@ -435,7 +440,8 @@ td {
     border: 10px solid rgba(139, 137, 137, 0.507);
     transition: all 1s ease-in;
 }
-.switch-inner{
+
+.switch-inner {
     width: 30%;
     position: absolute;
     /* left: 70%; */
@@ -447,33 +453,76 @@ td {
     transition: all 1s ease-in;
 }
 
-.check-box{
+.check-box {
     margin-bottom: 3%;
 }
 
-.model{
+.model {
     border: 5px groove rgb(47, 96, 160);
     padding: 20px;
     margin-right: 60px;
-    background-color:rgb(17, 103, 138);
+    background-color: rgb(17, 103, 138);
     color: white;
 }
-.box-container{
+
+.box-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 4%;
 }
-.price-range
-{
+
+.price-range {
     background-color: teal;
     color: white;
     padding: 20px 15px;
     text-align: center;
 }
-.price-range ~ p{
+
+.price-range~p {
     text-align: center;
 }
-.price-range ~ p input{
-    cursor: pointer;   
+
+.price-range~p input {
+    cursor: pointer;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-name {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0 0 10px;
+}
+
+.card-price {
+    font-size: 1.25rem;
+    color: #00aaff;
+    margin: 0;
+}
+.card-container
+{
+    margin-top: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 20px;
+    justify-content: center;
+}
+.card-container .card{
+    margin-right: 30px;
 }
