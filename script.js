@@ -214,9 +214,12 @@ $(function () {
                             setTimeout(function () {
                                 errorTextField.text("");
                                 login_btn.text("Login");
-                                alert("Login Success!");
-                                window.location.href = "server/dashboard.html";
+                                $("form").trigger("reset");
+                                errorTextField.text("Login Success!").css("color", "green").FadeIn("slow");
                             }, 3000);
+                            setTimeout(function(){
+                                window.location.href = "server/dashboard.html";
+                            }, 4000);
                         }
                         else {
                             login_btn.text("Login");
@@ -231,6 +234,10 @@ $(function () {
                     }
                 }
             });
+        }
+        else
+        {
+            errorTextField.text("All Fields are Required!").fadeIn("slow");
         }
     })
     delBtn.on('click', function () {
