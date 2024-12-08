@@ -10,7 +10,7 @@ body {
     margin-bottom: 1000px;
     background-color: #f0f0f0;
 }
-
+.mt{margin-top: 30px;}
 .select-box1 {
     margin-bottom: 10px;
 }
@@ -449,4 +449,17 @@ td {
 
 .check-box{
     margin-bottom: 3%;
+}
+
+.model{
+    border: 5px groove rgb(47, 96, 160);
+    padding: 20px;
+    margin-right: 60px;
+    background-color:rgb(17, 103, 138);
+    color: white;
+}
+.box-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
