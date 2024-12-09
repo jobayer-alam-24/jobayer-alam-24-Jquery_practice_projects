@@ -22,6 +22,7 @@ $(function () {
     let switchInner = $(".switch-inner");
     let checkbox = $("#switch");
     let boxContainer = $(".box-container");
+    let cardContainer = $(".card-container");
     let range = $('[type="range"]');
     let tkShow = $(".price-range").next().children("span");
     let cardPrices = $(".card-container").children().children(".card-price");
@@ -324,23 +325,24 @@ $(function () {
             boxContainer.append(modelShow);
         }
     })
-    $(".card-container").children().hide();
-    range.on('change', function () {
+    cardContainer.hide();
+    range.on('change', function(){
         let rangeValue = $(this).val();
         tkShow.text(rangeValue);
-        
-        cardPrices.each(function (i, element) {
-            let priceValue = parseInt($(element).text());
-            let card = $(element).parents('.card');
 
-            if(priceValue >= 500 && priceValue <= rangeValue){
-                card.show("slow");
+        cardPrices.each(function(i, element){
+            cardContainer.show();
+            let cardPriceValue = parseInt($(element).text());
+            let card = $(element).parent();
+
+            if(cardPriceValue >= 500 && cardPriceValue <= rangeValue){
+                card.fadeIn().show("slow");
             }
             else
             {
                 card.fadeOut("slow").hide();
             }
-        })
-    })
+        });
+    });
 })
 
