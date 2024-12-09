@@ -13,7 +13,20 @@
 </head>
 
 <body>
-    <div class="login-container">
+    <p class="top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </p>
+    <div class="menu-bar">
+       <ol>
+        <li><a href="#login_form">Login Form</a></li>
+        <li><a href="#create_input">Create Input</a></li>
+        <li><a href="#get_comments">Auto Comment GET</a></li>
+        <li><a href="#login2">Login Form 2</a></li>
+        <li><a href="#select_table">Select Table</a></li>
+        <li><a href="#load_json">Load JSON</a></li>
+       </ol>
+    </div>
+    <div class="login-container" id="login_form">
         <form class="login-form1">
             <h2>Login</h2>
             <div class="form-group">
@@ -55,7 +68,7 @@
                 <td>30</td>
             </tr>
         </tbody>
-        <table class="table2">
+        <table class="table2" id="create_input">
             <tbody>
                 <tr>
                     <td class="input-with-icon">
@@ -100,7 +113,7 @@
             </select>
         </div>
         <form action="#" method="post">
-            <h3>Auto Get Comments:</h3>
+            <h3 id="get_comments">Auto Get Comments:</h3>
             <textarea name="comments" id="comments-input" rows="20" cols="80"
                 placeholder="Write Something About Ourselves.."></textarea><br>
             <span class="success-messege"></span>
@@ -149,7 +162,7 @@
                 </tr>
             </tbody>
         </table>
-        <div class="login-container2">
+        <div class="login-container2" id="login2">
             <form class="login-form" action="" method="POST">
                 <h2>Login</h2>
                 <div class="input-group">
@@ -164,7 +177,7 @@
                 <button type="submit" class="login-button">Login</button>
             </form>
         </div>
-        <div class="table-container">
+        <div class="table-container" id="select_table">
             <table>
                 <thead>
                     <tr>
@@ -211,7 +224,7 @@
         <div class="switch">
             <div class="switch-inner"></div>
         </div>
-        <div class="box">
+        <div class="box" id="dynamic_text">
             <h2 class="box-title">Dynamic Text</h2>
             <p class="box-text">
                 Watching you work on this project has been such a privilege. The way you approach challenges with
@@ -302,7 +315,7 @@
                 <p class="card-price">99999</p>
             </div>
         </div>
-            <button class="load-json">Load More Title (JSON Data)</button>
+            <button class="load-json" id="load_json">Load More Title (JSON Data)</button>
             <table>
                 <thead class="table-head">
                     <tr>

@@ -514,6 +514,35 @@ td {
     color: #00aaff;
     margin: 0;
 }
+.top{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(15, 52, 155);
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    border-radius: 50%;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: opacity 2s ease-out;
+    display: none;
+    box-shadow: rgba(22, 22, 133, 0.2) 0px 7px 29px 0px;
+}
+.top:hover
+{
+    opacity: 1;
+}
+.top i{
+    background-color: rgb(15, 52, 155);
+    border-radius: 50%;
+}
+.menu-bar{
+    margin-bottom: 4%;
+}
+a{color: black;}
 .load-json{
     padding: 8px 10px;
     font-size: 30px;

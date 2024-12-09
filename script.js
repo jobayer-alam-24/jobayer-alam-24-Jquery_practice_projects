@@ -28,6 +28,8 @@ $(function () {
     let load_json_table_body = load_json.next().children("tbody");
     let tkShow = $(".price-range").next().children("span");
     let cardPrices = $(".card-container").children().children(".card-price");
+    let startsWithHash = $("a[href^='#']");
+    let topIcon = $(".top");
     //Random JSON DATA Add Into Table
     table.data("name1", "Rahima");
     table.data("name2", "Jalil");
@@ -352,6 +354,32 @@ $(function () {
             }, 3000);
         });
     })
+    //smooth scroll animation...
+    startsWithHash.on('click', function(e){
+        e.preventDefault();
+        
+        //this.hash = get the ID of selected element
+        let target = this.hash;
+        let $target = $(target);
+
+        $("html, body").animate({
+            scrollTop: $target.offset().top
+        }, 4000, 'swing');
+    })
+    $(window).scroll(function(){
+        if($(this).scrollTop() > 300){
+            topIcon.fadeIn("slow");
+        }
+        else
+        {
+            topIcon.fadeOut(2000);
+        }
+    })
+    topIcon.on('click', function(){
+        $('html, body').animate({
+            scrollTop: 0
+        }, 3000);
+    });
 })
 
 
