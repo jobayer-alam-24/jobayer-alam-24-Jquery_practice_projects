@@ -24,6 +24,8 @@ $(function () {
     let boxContainer = $(".box-container");
     let cardContainer = $(".card-container");
     let range = $('[type="range"]');
+    let load_json = $(".load-json");
+    let load_json_table_body = load_json.next().children("tbody");
     let tkShow = $(".price-range").next().children("span");
     let cardPrices = $(".card-container").children().children(".card-price");
     //Random JSON DATA Add Into Table
@@ -222,7 +224,7 @@ $(function () {
                                 $("form").trigger("reset");
                                 errorTextField.text("Login Success!").css("color", "green").FadeIn("slow");
                             }, 3000);
-                            setTimeout(function(){
+                            setTimeout(function () {
                                 window.location.href = "server/dashboard.html";
                             }, 4000);
                         }
@@ -240,8 +242,7 @@ $(function () {
                 }
             });
         }
-        else
-        {
+        else {
             errorTextField.text("All Fields are Required!").fadeIn("slow");
         }
     })
@@ -272,9 +273,8 @@ $(function () {
                 see_more.text("loading....");
             },
             success: function (data, statusTxt) {
-                if(statusTxt == "success")
-                {
-                    setTimeout(function(){
+                if (statusTxt == "success") {
+                    setTimeout(function () {
                         see_more.text("See more...");
                         boxText.append(data);
                     }, 3000);
@@ -289,60 +289,69 @@ $(function () {
             size += 8;
             inner_box.width(size + "%");
 
-            if(size >= 100){
+            if (size >= 100) {
                 clearInterval(runningInterval);
                 download_btn.text("Download Completed!");
                 download_btn.css("background-color", "green");
             }
         }, 2000);
-   });
-   switchContainer.on("click", function () { 
+    });
+    switchContainer.on("click", function () {
         let innerBox = switchInner.css("left");
-        if(innerBox == "0px"){
+        if (innerBox == "0px") {
             switchInner.css({
                 "left": "70%",
                 "background-color": "white",
                 "box-shadow": "none"
             });
             $(this).css({
-               "background-color": "skyblue"
+                "background-color": "skyblue"
             });
             checkbox.attr("checked", true);
         }
-        else
-        {
+        else {
             switchInner.css("left", "0")
             switchInner.css("background-color", "rgb(223, 217, 217)");
             $(this).css("background-color", "white");
             checkbox.attr("checked", false);
         }
-        
+
     })
-    $('.select-box3').on('change', 'select', function(){
+    $('.select-box3').on('change', 'select', function () {
         let value = $(this).val();
         let modelShow = `<h5 class="model">Model: <span>${value}</span></h5>`;
-        if(value != ""){
+        if (value != "") {
             boxContainer.append(modelShow);
         }
     })
     cardContainer.hide();
-    range.on('change', function(){
+    range.on('change', function () {
         let rangeValue = $(this).val();
         tkShow.text(rangeValue);
 
-        cardPrices.each(function(i, element){
+        cardPrices.each(function (i, element) {
             cardContainer.show();
             let cardPriceValue = parseInt($(element).text());
             let card = $(element).parent();
 
-            if(cardPriceValue >= 500 && cardPriceValue <= rangeValue){
+            if (cardPriceValue >= 500 && cardPriceValue <= rangeValue) {
                 card.fadeIn().show("slow");
             }
-            else
-            {
+            else {
                 card.fadeOut("slow").hide();
             }
         });
     });
+    load_json.on("click", function () {
+        $.getJSON("server/video_title.json", function (data) {
+            setTimeout(function () {
+                $.each(data, function (key, value) {
+                    let tr = `<tr><td>${value.title}</td></tr>`;
+                    load_json_table_body.append(tr);
+                })
+            }, 3000);
+        });
+    })
 })
+
 
