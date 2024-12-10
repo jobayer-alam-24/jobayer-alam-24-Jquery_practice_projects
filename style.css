@@ -579,3 +579,40 @@ a{color: black;}
 .card-container .card{
     margin-right: 30px;
 }
+.styled-input {
+    width: 300px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.styled-input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.styled-input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+.country-suggestion {
+    margin-top: 2.2px;
+    width: 330px;
+    height: 300px;
+    display: none;
+    overflow: auto;
+}
+.country-suggestion ul {
+    margin: 0;
+}
+.country-suggestion ul li {
+    list-style: none;
+    font-size: 1.2rem;
+    background-color: rgb(221, 216, 216);
+    padding: 15px;
+    margin: 0;
+    cursor: pointer;
+}

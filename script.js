@@ -30,6 +30,9 @@ $(function () {
     let cardPrices = $(".card-container").children().children(".card-price");
     let startsWithHash = $("a[href^='#']");
     let topIcon = $(".top");
+    let suggestionInput = $(".styled-input");
+    let suggestionContainer = $(".country-suggestion");
+    let suggestionLists = suggestionContainer.children().find("li");
     //Random JSON DATA Add Into Table
     table.data("name1", "Rahima");
     table.data("name2", "Jalil");
@@ -146,7 +149,7 @@ $(function () {
         let tr = $(`#${id}`).parents("tr");
         tr.remove();
     })
-    $(document).on('mouseenter', "li", function () {
+    $(".lists").on('mouseenter', "li", function () {
         $(this).toggleClass('bg');
     })
 
@@ -379,6 +382,24 @@ $(function () {
         $('html, body').animate({
             scrollTop: 0
         }, 3000);
+    });
+    suggestionInput.on('keyup', function () {
+        let inputValue = $(this).val().toLowerCase();
+        suggestionLists.filter(function () {
+            if(inputValue != "")
+            {
+                suggestionContainer.show("slow");
+                $(this).toggle($(this).text().toLowerCase().indexOf(inputValue) > -1);
+            }
+            else
+            {
+                suggestionContainer.slideUp(1000);
+            }
+        })
+    })
+    suggestionContainer.on('click', "li", function () {
+        suggestionInput.val($(this).text());
+        suggestionContainer.fadeOut("fast");
     });
 })
 
