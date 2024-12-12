@@ -33,6 +33,8 @@ $(function () {
     let suggestionInput = $(".styled-input");
     let suggestionContainer = $(".country-suggestion");
     let suggestionLists = suggestionContainer.children().find("li");
+    let countryGetForm = $("#country-get");
+    let countryGetFormInput = countryGetForm.find("input");
     //Random JSON DATA Add Into Table
     table.data("name1", "Rahima");
     table.data("name2", "Jalil");
@@ -401,6 +403,11 @@ $(function () {
         suggestionInput.val($(this).text());
         suggestionContainer.fadeOut("fast");
     });
+    countryGetForm.submit(function (e) {
+        e.preventDefault();
+        let text = $(this).serialize();
+        console.log(text);
+    })
 })
 
 
